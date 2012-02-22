@@ -1,13 +1,15 @@
 from setuptools import setup, find_packages
+      
+version = '2.0.2'
 
-# Check for Plone versions
 try:
     from plone.app.upgrade import v40
     HAS_PLONE40 = True
 except ImportError:
     HAS_PLONE40 = False
 
-base_requires=[
+if HAS_PLONE40:
+    install_requires = [
           'setuptools',
           'Solgema.ContextualContentMenu',
           'plone.app.z3cform',
@@ -15,24 +17,23 @@ base_requires=[
           'z3c.form',
           'collective.js.colorpicker',
           'collective.js.fullcalendar>=1.5.2.1',
+          'collective.js.jqueryui>=1.8.16.4',
           # -*- Extra requirements: -*-
       ]
-
-plone4_requires = ['collective.js.jqueryui>=1.8.16.4',]
-
-plone3_requires = [
-            'zope.i18n=3.6',
-            'zope.schema=3.8.1',
-            'collective.js.jqueryui=1.7.2.7',
+else:
+    install_requires = [
+          'setuptools',
+          'Solgema.ContextualContentMenu',
+          'plone.app.z3cform',
+          'plone.z3cform',
+          'z3c.form',
+          'collective.js.colorpicker',
+          'collective.js.fullcalendar>=1.5.2.1',
+          'collective.js.jqueryui==1.7.2.7',
+          'zope.i18n==3.6',
+          'zope.schema==3.8.1',
+          # -*- Extra requirements: -*-
       ]
-
-if HAS_PLONE40:
-      install_requires = base_requires + plone4_requires
-
-if not HAS_PLONE40:
-      install_requires = base_requires + plone3_requires
-      
-version = '2.0.2'
 
 setup(name='Solgema.fullcalendar',
       version=version,
