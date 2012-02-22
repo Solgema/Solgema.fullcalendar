@@ -33,7 +33,7 @@ if HAS_PLONE40:
 if not HAS_PLONE40:
       install_requires = base_requires + plone3_requires
       
-version = '2.0.1'
+version = '2.0.2'
 
 setup(name='Solgema.fullcalendar',
       version=version,
