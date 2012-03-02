@@ -29,13 +29,7 @@ adapter for your specific context or layer.
 
 Installation Note for Plone 3.x
 -------------------------------
-You might encounter a conflict error with a wrong version of zope.i18n and zope.schema when buildout.
-If so, edit your buildout.cfg and in the [version] part like that:
-
-[versions]
-...
-zope.i18n = 3.6
-zope.schema = 3.8.1
+Use Solgema.fullcalendar 2.0.x
 
 Customizing the skin
 --------------------
