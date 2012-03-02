@@ -1,39 +1,6 @@
 from setuptools import setup, find_packages
       
-version = '2.0.2'
-
-try:
-    from plone.app.upgrade import v40
-    HAS_PLONE40 = True
-except ImportError:
-    HAS_PLONE40 = False
-
-if HAS_PLONE40:
-    install_requires = [
-          'setuptools',
-          'Solgema.ContextualContentMenu',
-          'plone.app.z3cform',
-          'plone.z3cform',
-          'z3c.form',
-          'collective.js.colorpicker',
-          'collective.js.fullcalendar>=1.5.2.1',
-          'collective.js.jqueryui>=1.8.16.4',
-          # -*- Extra requirements: -*-
-      ]
-else:
-    install_requires = [
-          'setuptools',
-          'Solgema.ContextualContentMenu',
-          'plone.app.z3cform',
-          'plone.z3cform',
-          'z3c.form',
-          'collective.js.colorpicker',
-          'collective.js.fullcalendar>=1.5.2.1',
-          'collective.js.jqueryui==1.7.2.7',
-          'zope.i18n==3.6',
-          'zope.schema==3.8.1',
-          # -*- Extra requirements: -*-
-      ]
+version = '2.1'
 
 setup(name='Solgema.fullcalendar',
       version=version,
@@ -55,7 +22,17 @@ setup(name='Solgema.fullcalendar',
       namespace_packages=['Solgema'],
       include_package_data=True,
       zip_safe=False,
-      install_requires=install_requires,
+      install_requires=[
+          'setuptools',
+          'Solgema.ContextualContentMenu',
+          'plone.app.z3cform',
+          'plone.z3cform',
+          'z3c.form',
+          'collective.js.colorpicker',
+          'collective.js.fullcalendar>=1.5.2.1',
+          'collective.js.jqueryui>=1.8.16.4',
+          # -*- Extra requirements: -*-
+      ],
       entry_points="""
       # -*- Entry points: -*-
       [z3c.autoinclude.plugin]
