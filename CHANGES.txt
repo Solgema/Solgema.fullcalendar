@@ -1,6 +1,13 @@
 Changelog
 =========
 
+2.1 (unreleased)
+----------------
+
+- Modified files for version 2.1
+  Solgema.fullcalendar 2.1 will not be compatible with Plone < 4
+  [fmoret]
+
 2.0.3 (unreleased)
 ------------------
 
